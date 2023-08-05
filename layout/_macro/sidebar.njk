@@ -33,8 +33,8 @@
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top animated" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
+          <i class="fa fa-arrow-up">{{- fa_inline({ iconName: 'arrow-up' }, { classes: ['fa-fw'] }) }}</i>
+          <span style="font-family:monospace;">0%</span>
         </div>
       {%- endif %}
     </div>
@@ -44,7 +44,13 @@
     <div class="sidebar-inner sidebar-blogroll">
       <div class="links-of-blogroll animated">
         <div class="links-of-blogroll-title">
-          {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
+          {%- if theme.links_settings.icon %}
+            <i class="{{ theme.links_settings.icon }} fa-fw">
+              {{- fa_inline({ iconName: theme.links_settings.icon.split(' ')[1].split('-')[1], 
+                              prefix: theme.links_settings.icon.split(' ')[0] },
+                            { classes: ['fa-fw'] }) }}
+            </i>
+          {% endif %}
           {{ __('sidebar.links') }}
         </div>
         <ul class="links-of-blogroll-list">

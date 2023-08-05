@@ -3,7 +3,7 @@
   {%- set itemURL = node.path %}
   <li class="menu-item menu-item-{{ node.name | lower | replace(' ', '-') }}">
 
-    {%- set menuIcon = '<i class="' + node.icon + ' fa-fw"></i>' if theme.menu_settings.icons and node.icon else '' %}
+    {%- set menuIcon = '<i class="' + node.icon + ' fa-fw">' + fa_inline({ iconName: node.icon.split(' ')[1].split('-')[1], prefix: node.icon.split(' ')[0]}, { classes: ["fa-fw"], size: 'xl' }) + '</i>' if theme.menu_settings.icons and node.icon else '' %}
     {%- set menuText = __('menu.' + node.name) | replace('menu.', '') %}
 
     {%- set menuBadge = '' %}

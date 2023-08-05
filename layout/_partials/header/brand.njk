@@ -30,7 +30,7 @@
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="{{ __('menu.search') }}" role="button">
       {%- if theme.algolia_search.enable or theme.local_search.enable %}
-        <i class="fa fa-search fa-fw fa-lg"></i>
+        <i class="fa fa-search fa-fw fa-lg">{{- fa_inline({ iconName: 'search'}, { classes: ['fa-fw', 'fa-lg'] }) }}</i>
       {%- endif %}
     </div>
   </div>

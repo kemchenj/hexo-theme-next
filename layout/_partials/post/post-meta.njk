@@ -5,7 +5,7 @@
   {%- if theme.post_meta.created_at %}
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
+        <i class="far fa-calendar">{{- fa_inline({ iconName: 'calendar', prefix:'far'}) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('post.posted') }}</span>
 
@@ -22,7 +22,7 @@
   {%- if theme.post_meta.updated_at.enable and (not theme.post_meta.updated_at.another_day or date_diff or not theme.post_meta.created_at) %}
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+        <i class="far fa-calendar-check">{{- fa_inline({ iconName: 'calendar-check', prefix:'far'}) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('post.edited') }}</span>
       <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
@@ -32,7 +32,7 @@
   {%- if post.categories and post.categories.length and theme.post_meta.categories %}
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
+        <i class="far fa-folder">{{- fa_inline({ iconName: 'folder', prefix:'far'}) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('post.in') }}</span>
       {%- for cat in post.categories.toArray() %}
@@ -52,7 +52,7 @@
   {%- if theme.leancloud_visitors.enable %}
     <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}" title="{{ __('post.views') }}">
       <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
+        <i class="far fa-eye">{{- fa_inline({ iconName: 'eye', prefix: 'far' }) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
       <span class="leancloud-visitors-count"></span>
@@ -62,7 +62,7 @@
   {%- if theme.firestore.enable %}
     <span class="post-meta-item" title="{{ __('post.views') }}">
       <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
+        <i class="far fa-eye">{{- fa_inline({ iconName: 'eye', prefix: 'far' }) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
       <span class="firestore-visitors-count"></span>
@@ -88,7 +88,7 @@
   {%- if config.symbols_count_time.symbols %}
     <span class="post-meta-item" title="{{ __('symbols_count_time.count') }}">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-word">{{- fa_inline('file-word', {prefix:'far'}) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
       <span>{{ symbolsCount(post) }}</span>
@@ -98,7 +98,7 @@
   {%- if config.symbols_count_time.time %}
     <span class="post-meta-item" title="{{ __('symbols_count_time.time') }}">
       <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
+        <i class="far fa-clock">{{- fa_inline('clock', {prefix:'far'}) }}</i>
       </span>
       <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
       <span>{{ symbolsTime(post, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>

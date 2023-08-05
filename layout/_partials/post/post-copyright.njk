@@ -1,4 +1,4 @@
-{%- set ccIcon = '<i class="fab fa-fw fa-creative-commons"></i>' %}
+{%- set ccIcon = '<i class="fab fa-fw fa-creative-commons">' + fa_inline({ iconName: creative-commons, prefix: 'fab' }, { classes: ['fa-fw'] }) + '</i>' %}
 {%- set ccText = theme.creative_commons.license | upper %}
 
 <div class="post-copyright">

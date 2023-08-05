@@ -1,9 +1,9 @@
 {%- if theme.language_switcher and languages.length > 1 %}
   <div class="languages">
     <label class="lang-select-label">
-      <i class="fa fa-language"></i>
+      <i class="fa fa-language">{{- fa_inline({ iconName: 'language' }) }}</i>
       <span>{{ language_name(page.lang) }}</span>
-      <i class="fa fa-angle-up" aria-hidden="true"></i>
+      <i class="fa fa-angle-up" aria-hidden="true">{{- fa_inline({ iconName: 'angle-up' }) }}</i>
     </label>
     <select class="lang-select" data-canonical="" aria-label="{{ __('accessibility.select_lang') }}">
       {% for language in languages %}

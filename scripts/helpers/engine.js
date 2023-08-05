@@ -7,6 +7,7 @@ const { parse } = require('url');
 const nextFont = require('./font');
 const nextUrl = require('./next-url');
 const { getVendors } = require('../events/lib/utils');
+const { faCss, faInline } = require('./fontawesome');
 
 hexo.extend.helper.register('next_font', nextFont);
 hexo.extend.helper.register('next_url', nextUrl);
@@ -113,3 +114,6 @@ hexo.extend.helper.register('language_name', function(language) {
   const name = hexo.theme.i18n.__(language)('name');
   return name === 'name' ? language : name;
 });
+
+hexo.extend.helper.register('fa_css', faCss)
+hexo.extend.helper.register('fa_inline', faInline)

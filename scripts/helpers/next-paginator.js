@@ -2,12 +2,14 @@
 
 'use strict';
 
+const { faInline } = require('./fontawesome');
+
 hexo.extend.helper.register('next_paginator', function() {
   const prev = this.__('accessibility.prev_page');
   const next = this.__('accessibility.next_page');
   let paginator = this.paginator({
-    prev_text: '<i class="fa fa-angle-left"></i>',
-    next_text: '<i class="fa fa-angle-right"></i>',
+    prev_text: '<i class="fa fa-angle-left">' + faInline({ iconName: 'angle-left' }) + '</i>',
+    next_text: '<i class="fa fa-angle-right">' + faInline({ iconName: 'angle-right'}) + '</i>',
     mid_size : 1,
     escape   : false
   });

@@ -1,5 +1,11 @@
   <div class="links-of-blogroll-title">
-    {%- if theme.related_posts.icon %}<i class="{{ theme.related_posts.icon }} fa-fw"></i>{% endif %}
+    {%- if theme.related_posts.icon %}
+      <i class="{{ theme.related_posts.icon }} fa-fw">
+        {{- fa_inline({ iconName: theme.related_posts.icon.split(' ')[1].split('-')[1], 
+                        prefix: theme.related_posts.icon.split(' ')[0] }, 
+                      { classes: ['fa-fw'] }) }}
+      </i>
+    {% endif %}
     {{ __('post.related_posts') }}
   </div>
   <ul class="popular-posts">
