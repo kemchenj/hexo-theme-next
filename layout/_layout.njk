@@ -6,6 +6,7 @@
   <title>{% block title %}{% endblock %}</title>
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
   {{- next_inject('head') }}
   <noscript>
     <link rel="stylesheet" href="{{ url_for(theme.css) }}/noscript.css">
@@ -41,7 +42,6 @@
 
   {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
 
-  {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
 
   {%- include '_third-party/math/index.njk' -%}
