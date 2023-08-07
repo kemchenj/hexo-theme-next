@@ -2,7 +2,9 @@
 
 {{- next_js('config.js') }}
 
-{{- next_js('comments.js') }}
+{%- if page.comments or theme.injects.comment.length > 0 %}
+  {{- next_js('comments.js') }}
+{%- endif %}
 
 {{- next_js('utils.js') }}
 {%- if theme.motion.enable %}
