@@ -35,7 +35,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2"
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "lightningcss": "^1.16.1"
   },
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",

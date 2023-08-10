@@ -1,4 +1,5 @@
 const { library, dom, icon: getIcon } = require('@fortawesome/fontawesome-svg-core')
+const css = require('lightningcss');
 
 function tryInstall(block) {
   try {
@@ -16,7 +17,10 @@ tryInstall(function () { return require('@fortawesome/free-brands-svg-icons').fa
 
 module.exports = {
   faCss() {
-    return dom.css()
+    return css.transform({
+      code: Buffer.from(dom.css()),
+      minify: true,
+    }).code.toString();
   },
 
   faInline(icon, options) {
